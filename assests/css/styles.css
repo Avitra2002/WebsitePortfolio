@@ -1,0 +1,338 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header li {
+    margin: 0 10px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+  
+  .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+  }
+  
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .name {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    overflow: hidden; /* Ensure text doesn't overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    border-right: 2px solid white; /* Simulate typing cursor */
+    animation: typing 2s steps(20) forwards
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fade-in 2s ease-in-out 2s forwards;
+    position: relative;
+    z-index: 1;
+    color: white; /* Ensure the text is visible on the black background */
+}
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.about-me-content {
+    position: relative;
+    min-height: 200vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    
+    
+  }
+
+  .about-me {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    margin-bottom: 10px;
+    }
+
+  
+  .background-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover; 
+    background-position: center; 
+  }
+  
+  .about-me-header {
+    text-align: center;
+  }
+  
+  .about-me-header h1 {
+    color: #fff;
+  }
+  .about-me {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about-me h1 {
+    color: #fff;
+  }
+  
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .column-work{
+    flex: 1;
+    padding: 0 100px;
+    background: rgba(0, 0, 0, 0); /* Default semi-transparent background */
+    transition: background-color 0.3s ease;
+    position: relative;
+    text-align: left;
+  }
+
+  .column-exercise{
+    flex: 1;
+    padding: 0 100px;
+    background: rgba(0, 0, 0, 0); /* Default semi-transparent background */
+    transition: background-color 0.3s ease;
+    position: relative;
+    text-align: right;
+  }
+
+  
+  .column-work:hover,.column-exercise:hover {
+    background-color: rgba(162, 134, 247, 0.7);
+    width: 50%; 
+    margin-left: -20px; 
+    margin-right: -20px; }
+  
+  .column h2 {
+    color: #fff;
+  }
+  
+  .description {
+    display: none;
+    color: #fff;
+  }
+  
+  .column-work:hover .description,
+.column-exercise:hover .description {
+    display: block;
+  }
+  
+
+.expertise {
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: black;
+    text-align: center; /* Center the content */
+    z-index: 3;
+}
+
+.expertise-inner {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    justify-content: center; /* Center flex items horizontally */
+    margin: 0 auto;
+}
+
+.expertise-box {
+    width: calc((33.33% - 20px)/1.5); /* Adjusted width for responsiveness */
+    /* Added margin for spacing between boxes */
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.expertise-box h3 {
+    margin-top: 0;
+    position: relative; /* Position relative for pseudo-element */
+  }
+
+  .expertise-box h3 i {
+    margin-right: 10px; /* Add spacing between icon and text */
+    font-size: 40px; /* Increase icon size */
+  }
+  
+  /* Add underline using pseudo-element */
+  .expertise-box h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust position as needed */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background-color: rgba(255, 255, 255, 0.22); /* Less transparent color */
+  }
+  
+  /* Different colors for underline */
+  .expertise-box:nth-child(1) h3::after {
+    background-color: rgba(255, 0, 0, 0.299); /* Red */
+  }
+  
+  .expertise-box:nth-child(2) h3::after {
+    background-color: rgba(0, 0, 255, 0.6); /* Blue */
+  }
+  
+  .expertise-box:nth-child(3) h3::after {
+    background-color: rgba(255, 165, 0, 0.299); /* Orange */
+  }
+@media screen and (max-width: 1200px) {
+    .expertise-box {
+        width: calc(50% - 20px); /* Adjusted width for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .expertise-box {
+        width: calc(100% - 20px); /* Adjusted width for small screens */
+    }
+}
+
+
+
+.work {
+    background-color: black;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-inner {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.work-box {
+    margin: 20px 0;
+    width: 31%;
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.work-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.work-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.work-box p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.contact {
+    background-color: black;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-inner {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.contact img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 30px;
+}
